@@ -183,3 +183,6 @@ cython_debug/
 .idea/
 .DS_Store
 .obsidian
+
+# documentation
+PROPOSAL.md
