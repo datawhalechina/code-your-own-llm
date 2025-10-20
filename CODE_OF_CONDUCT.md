@@ -41,9 +41,7 @@
 
 ## 举报指南
 
-如果您遭遇或目睹了滥用、侵权或其他不可接受的行为，请通过以下方式向项目负责人报告：
-
-* 联系本项目负责人：姜舒凡 [@Tsumugii24](https://github.com/Tsumugii24)
+如果您遭遇或目睹了滥用、侵权或其他不可接受的行为，请向项目负责人报告。
 
 所有投诉和反馈都将得到及时和公平的审查和调查。
 
@@ -62,13 +60,10 @@
 
 ## 致谢
 
-本行为准则改编自[贡献者行为准则][homepage]2.1版，中文版见 https://www.contributor-covenant.org/zh-cn/version/2/1/code_of_conduct.html 。
-
-有关此行为准则常见问题的答案，请参阅 https://www.contributor-covenant.org/faq。翻译版本见 https://www.contributor-covenant.org/translations 。
+本行为准则改编自 [Contributor Covenant 3.0 Code of Conduct](https://www.contributor-covenant.org/version/3/0/code_of_conduct/)，中文版见 [贡献者公约3.0版](https://www.contributor-covenant.org/zh-cn/version/3/0/code_of_conduct/) 。
 
 ---
 
 **最后更新日期**：2025 年 10 月
 
 Datawhale 通过开源学习模式，助理AI学习者与知识连接，与人连接，与场景连接，推动AI人才培养。我们与学习者一起成长！🎉
-
