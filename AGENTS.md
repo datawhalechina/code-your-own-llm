@@ -299,15 +299,21 @@ $$
 
 多头注意力机制的计算公式为：
 
+
 $$
 \text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O \tag{0.1}
 $$
 
+
+
 其中每个注意力头的计算方式为：
+
 
 $$
 \text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V) \tag{0.2}
 $$
+
+
 
 在正文中可以引用公式 $(0.1)$ 和公式 $(0.2)$ 来说明多头注意力的数学原理和计算过程。
 
@@ -412,7 +418,7 @@ $$
 
 #### 6.4.6 常用函数
 
-如[表$0$-$8$](#Table0-8)所示，常用的数学函数。<span id="Table0-8"> </span>
+如[表0-8](#Table0-8)所示，常用的数学函数。<span id="Table0-8"> </span>
 
 <div align="center">
 	<p>表0-8 常用函数符号</p>
@@ -455,10 +461,10 @@ $$
 
 在书写公式时，应注意以下规范：
 
-- 公式中的变量使用斜体，例如 $x$，$y$，$z$
-- 函数名使用正体，例如 $\text{softmax}$、$\log$、$\exp$、$\text{Attention}$
-- 向量和矩阵使用粗体，例如 $\mathbf{x}$、$\mathbf{W}$
-- 集合使用花体或空心体，例如 $\mathcal{D}$、$\mathbb{R}$
+- 公式中的变量使用斜体，例如 $x, y, z$
+- 函数名使用正体，例如 $\text{softmax}, \log, \exp, \text{Attention}$
+- 向量和矩阵使用粗体，例如 $\mathbf{x}, \mathbf{W}$
+- 集合使用花体或空心体，例如 $\mathcal{D}, \mathbb{R}$
 - 复杂公式应适当换行，保证良好的可读性 
 
 
