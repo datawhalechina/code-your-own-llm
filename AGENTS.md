@@ -58,7 +58,7 @@
 
 内容的语言表达中，统一使用“我们”作为叙述主体，并且注意表达的逻辑清晰和书面化，避免长难句的使用。
 
-对于需要强调的正文中的文字部分，统一使用 `<strong> </strong>` 包裹；正文中出现的引用标记，统一使用 `<sup> </sup>` 进行包裹。例如，<strong>被强调的文字部分</strong>请参考<sup>[[*]](# 7 参考文献)</sup>
+对于需要强调的正文中的文字部分，统一使用 `<strong> </strong>` 包裹；正文中出现的引用标记，统一使用 `<sup> </sup>` 进行包裹。例如，<strong>被强调的文字部分</strong>请参考<sup>[[*]](#7-参考文献)</sup>
 
 
 
@@ -316,8 +316,9 @@ $$
 
 如[表0-3](#tab0-3)所示，标量、向量、矩阵和张量的表示方法。<span id="tab0-3"> </span>
 <div align="center">
-	<p>表0-3 数字和数组符号</p>
+	<p>表0-3 向量与矩阵符号</p>
 </div>
+
 
 <div align="center">
 
@@ -331,6 +332,21 @@ $$
 | $\mathbf{e}^{(i)}$ | `\mathbf{e}^{(i)}` | 标准基向量，第 $i$ 个位置为 $1$ |
 
 </div>
+例如，权重矩阵 $\mathbf{W}$ 和输入向量 $\mathbf{x}$ 的乘积可以表示为：
+$$
+\mathbf{y} = \mathbf{W}\mathbf{x} = \begin{bmatrix}
+w_{11} & w_{12} & \cdots & w_{1n} \\
+w_{21} & w_{22} & \cdots & w_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+w_{m1} & w_{m2} & \cdots & w_{mn}
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_n
+\end{bmatrix}
+$$
 
 #### 6.4.2 集合和索引
 
@@ -392,10 +408,10 @@ $$
 | :--- | :--- | :--- |
 | $\frac{dy}{dx}$ | `\frac{dy}{dx}` | $y$ 对 $x$ 的导数 |
 | $\frac{\partial y}{\partial x}$ | `\frac{\partial y}{\partial x}` | $y$ 对 $x$ 的偏导数 |
-| $\nabla_{\mathbf{x}} y$ | `\nabla_{\mathbf{x}} y$ | $y$ 对 $\mathbf{x}$ 的梯度 |
+| $\nabla_{\mathbf{x}} y$ | `\nabla_{\mathbf{x}} y` | $y$ 对 $\mathbf{x}$ 的梯度 |
 | $\nabla^2_{\mathbf{x}} f(\mathbf{x})$ | `\nabla^2_{\mathbf{x}} f(\mathbf{x})` | $f$ 在 $\mathbf{x}$ 处的 `Hessian` 矩阵 |
 | $\int f(x)dx$ | `\int f(x)dx` | $f(x)$ 在 $x$ 上的定积分 |
-| $\sum_{i=1}^{n}$ | `\sum_{i=1}^{n}$ | 求和 |
+| $\sum_{i=1}^{n}$ | `\sum_{i=1}^{n}` | 求和 |
 | $\prod_{i=1}^{n}$ | `\prod_{i=1}^{n}` | 连乘 |
 
 </div>
@@ -447,29 +463,7 @@ $$
 
 </div>
 
-
-### 6.5 矩阵和向量
-
-矩阵和向量的表示使用 `LaTeX` 的矩阵环境。例如：
-
-权重矩阵 $\mathbf{W}$ 和输入向量 $\mathbf{x}$ 的乘积为：
-
-$$
-\mathbf{y} = \mathbf{W}\mathbf{x} = \begin{bmatrix}
-w_{11} & w_{12} & \cdots & w_{1n} \\
-w_{21} & w_{22} & \cdots & w_{2n} \\
-\vdots & \vdots & \ddots & \vdots \\
-w_{m1} & w_{m2} & \cdots & w_{mn}
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2 \\
-\vdots \\
-x_n
-\end{bmatrix}
-$$
-
-### 6.6 公式排版规范
+### 6.5 公式排版规范
 
 在书写公式时，应注意以下规范：
 
