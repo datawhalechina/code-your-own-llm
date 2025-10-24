@@ -303,7 +303,7 @@ $$
 其中每个注意力头的计算方式为：<span id="eq0.2"> </span>
 
 $$
-\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)\tag{0.2}
+{\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)\tag{0.2}}
 $$
 
 在正文中可以引用公式 [(0.1)](#eq0.1) 和公式 [(0.2)](#eq0.2) 来说明多头注意力的数学原理和计算过程。
@@ -334,6 +334,7 @@ $$
 <div align="center">
 	<p>表0-4 集合和索引符号</p>
 </div>
+
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\mathbb{R}$ | `\mathbb{R}` | 实数集 |
@@ -353,6 +354,7 @@ $$
 <div align="center">
 	<p>表0-5 线性代数运算符号</p>
 </div>
+
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\mathbf{A}^\top$ | `\mathbf{A}^\top` | 矩阵 $\mathbf{A}$ 的转置 |
@@ -369,6 +371,7 @@ $$
 <div align="center">
 	<p>表0-6 微积分符号</p>
 </div>
+
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\frac{dy}{dx}$ | `\frac{dy}{dx}` | $y$ 对 $x$ 的导数 |
@@ -387,6 +390,7 @@ $$
 <div align="center">
 	<p>表0-7 概率和信息论符号</p>
 </div>
+
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $P(a)$ | `P(a)` | 离散变量的概率分布 |
@@ -406,6 +410,7 @@ $$
 <div align="center">
 	<p>表0-8 常用函数符号</p>
 </div>
+
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\log x$ | `\log x` | 自然对数 |
