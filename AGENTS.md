@@ -9,11 +9,11 @@
 
 ## 1 结构
 
-如[表0-1](#Table0-1)所示，文档的结构由符号 `#` 定义，符合通用的 `markdown` 标准。建议采用三级标题体系，禁止出现孤立的三级标题。
+如[表0-1](#tab0-1)所示，文档的结构由符号 `#` 定义，符合通用的 `markdown` 标准。建议采用三级标题体系，禁止出现孤立的三级标题。
 
 章节标题之后需添加一段无标题的序言，概括本章的核心内容。
 
-每个标题下的段落的长度区间需要合理，不宜过长或过短，适合学习者阅读并保持注意力集中。如果检查时发现过长或过短，可以考虑拆分段落或合并段落。每个一级标题段落前后需要空一行，段落间不需要空行。<span id="Table0-1"> </span>
+每个标题下的段落的长度区间需要合理，不宜过长或过短，适合学习者阅读并保持注意力集中。如果检查时发现过长或过短，可以考虑拆分段落或合并段落。每个一级标题段落前后需要空一行，段落间不需要空行。<span id="tab0-1"> </span>
 
 <div align="center">
   <p>表0-1 文档结构层级</p>
@@ -66,7 +66,7 @@
 
 图像统一使用 `png` 格式或 `gif` 格式，保证图像的分辨率足够清晰。图中若存在文字，中文使用宋体，英文使用 `Times New Roman`。
 
-如[图0.1](#Figure0.1)所示，每个图像必须包含 `caption`，位于图像的下方居中，`caption`  的内容准确概括图像的核心信息。如果存在图像，则正文中必须包含对应的图像引用。每个章节的图像编号独立，形式为 `x.y`，`x` 为章节的编号，`y` 从 $1$ 开始，逐次递增。<span id="Figure0.1"> </span>
+如[图0.1](#fig0.1)所示，每个图像必须包含 `caption`，位于图像的下方居中，`caption`  的内容准确概括图像的核心信息。如果存在图像，则正文中必须包含对应的图像引用。每个章节的图像编号独立，形式为 `x.y`，`x` 为章节的编号，`y` 从 $1$ 开始，逐次递增。<span id="fig0.1"> </span>
 
 <div align="center">
   <img src="./assets/figure.png" width="90%"/>
@@ -77,7 +77,7 @@
 
 ## 4 表格
 
-如[表0-2](#Table0-2)所示，每个表格必须包含 `caption`，位于表格的上方居中，`caption`  的内容描述概括表格的核心信息。如果存在表格，则正文中必须包含对应的表格引用。每个章节的表格编号独立，形式为 `x.y`，`x` 为章节的编号，`y` 从 $1$ 开始，逐次递增。<span id="Table0-2"> </span>
+如[表0-2](#tab0-2)所示，每个表格必须包含 `caption`，位于表格的上方居中，`caption`  的内容描述概括表格的核心信息。如果存在表格，则正文中必须包含对应的表格引用。每个章节的表格编号独立，形式为 `x.y`，`x` 为章节的编号，`y` 从 $1$ 开始，逐次递增。<span id="tab0-2"> </span>
 
 <div align="center">
   <p>表0-2 示例表格标题</p>
@@ -284,23 +284,29 @@ python train.py --epochs 10 --batch_size 32
 
 `Transformer` 模型的自注意力机制计算公式如下：
 
-$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+$$
+{\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V}
+$$
 
-其中，$Q$、$K$、$V$ 分别表示查询（`Query`）、键（`Key`）和值（`Value`）矩阵，$d_k$ 是键向量的维度。
+其中，$Q、K、V$ 分别表示查询（`Query`）、键（`Key`）和值（`Value`）矩阵，$d_k$ 是键向量的维度。
 
 ### 6.3 公式编号
 
 对于需要在正文中多次引用的重要公式，应添加编号。编号格式为 `(x.y)`，其中 `x` 为章节编号，`y` 从 $1$ 开始递增。例如：
 
-多头注意力机制的计算公式为：
+多头注意力机制的计算公式为：<span id="eq0.1"> </span>
 
-$$\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O $$$$\tag{0.1}$$
+$$
+{\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, ..., \text{head}_h)W^O}\tag{0.1}
+$$
 
-其中每个注意力头的计算方式为：
+其中每个注意力头的计算方式为：<span id="eq0.2"> </span>
 
-$$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$$$ \tag{0.2}$$
+$$
+\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)\tag{0.2}
+$$
 
-在正文中可以引用公式 [$(0.1)$](# 0.1) 和公式 $(0.2)$ 来说明多头注意力的数学原理和计算过程。
+在正文中可以引用公式 [(0.1)](#eq0.1) 和公式 [(0.2)](#eq0.2) 来说明多头注意力的数学原理和计算过程。
 
 ### 6.4 常用数学符号
 
@@ -308,7 +314,7 @@ $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$$$ \tag{0.2}$$
 
 #### 6.4.1 数字和数组
 
-如[表0-3](#Table0-3)所示，标量、向量、矩阵和张量的表示方法。<span id="Table0-3"> </span>
+如[表0-3](#tab0-3)所示，标量、向量、矩阵和张量的表示方法。<span id="tab0-3"> </span>
 <div align="center">
 	<p>表0-3 数字和数组符号</p>
 </div>
@@ -324,12 +330,10 @@ $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$$$ \tag{0.2}$$
 
 #### 6.4.2 集合和索引
 
-如[表0-4](#Table0-4)所示，集合和索引的表示方法。<span id="Table0-4"> </span>
+如[表0-4](#tab0-4)所示，集合和索引的表示方法。<span id="tab0-4"> </span>
 <div align="center">
 	<p>表0-4 集合和索引符号</p>
 </div>
-
-
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\mathbb{R}$ | `\mathbb{R}` | 实数集 |
@@ -345,12 +349,10 @@ $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$$$ \tag{0.2}$$
 
 #### 6.4.3 线性代数运算
 
-如[表0-5](#Table0-5)所示，常用的线性代数运算符号。<span id="Table0-5"> </span>
+如[表0-5](#tab0-5)所示，常用的线性代数运算符号。<span id="tab0-5"> </span>
 <div align="center">
 	<p>表0-5 线性代数运算符号</p>
 </div>
-
-
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\mathbf{A}^\top$ | `\mathbf{A}^\top` | 矩阵 $\mathbf{A}$ 的转置 |
@@ -362,13 +364,11 @@ $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$$$ \tag{0.2}$$
 
 #### 6.4.4 微积分
 
-如[表0-6](#Table0-6)所示，微积分相关的符号。<span id="Table 0-6"> </span>
+如[表0-6](#tab0-6)所示，微积分相关的符号。<span id="tab 0-6"> </span>
 
 <div align="center">
 	<p>表0-6 微积分符号</p>
 </div>
-
-
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\frac{dy}{dx}$ | `\frac{dy}{dx}` | $y$ 对 $x$ 的导数 |
@@ -382,13 +382,11 @@ $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$$$ \tag{0.2}$$
 #### 6.4.5 概率和信息论
 
 
-如[表0-7](#Table0-7)所示，概率和信息论相关的符号。<span id="Table0-7"> </span>
+如[表0-7](#tab0-7)所示，概率和信息论相关的符号。<span id="tab0-7"> </span>
 
 <div align="center">
 	<p>表0-7 概率和信息论符号</p>
 </div>
-
-
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $P(a)$ | `P(a)` | 离散变量的概率分布 |
@@ -403,13 +401,11 @@ $$\text{head}_i = \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)$$$$ \tag{0.2}$$
 
 #### 6.4.6 常用函数
 
-如[表0-8](#Table0-8)所示，常用的数学函数。<span id="Table0-8"> </span>
+如[表0-8](#tab0-8)所示，常用的数学函数。<span id="tab0-8"> </span>
 
 <div align="center">
 	<p>表0-8 常用函数符号</p>
 </div>
-
-
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\log x$ | `\log x` | 自然对数 |
