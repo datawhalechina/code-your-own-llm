@@ -13,7 +13,7 @@
 
 章节标题之后需添加一段无标题的序言，概括本章的核心内容。
 
-每个标题下的段落的长度区间需要合理，不宜过长或过短，适合学习者阅读并保持注意力集中。如果检查时发现过长或过短，可以考虑拆分段落或合并段落。每个一级标题段落前后需要空一行，段落间不需要空行。<span id="tab0-1"> </span>
+每个标题下的段落的长度区间需要合理，不宜过长或过短，适合学习者阅读并保持注意力集中。如果检查时发现过长或过短，可以考虑拆分段落或合并段落。每个一级标题段落前后需要空行。<span id="tab0-1"> </span>
 
 <div align="center">
   <p>表0-1 文档结构层级</p>
@@ -335,9 +335,12 @@ $$
 #### 6.4.2 集合和索引
 
 如[表0-4](#tab0-4)所示，集合和索引的表示方法。<span id="tab0-4"> </span>
+
 <div align="center">
 	<p>表0-4 集合和索引符号</p>
 </div>
+
+<div align="center">
 
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
@@ -352,12 +355,17 @@ $$
 | $\mathbf{A}_{i,:}$ | `\mathbf{A}_{i,:}` | 矩阵 $\mathbf{A}$ 的第 $i$ 行 |
 | $\mathbf{A}_{:,j}$ | `\mathbf{A}_{:,j}` | 矩阵 $\mathbf{A}$ 的第 $j$ 列 |
 
+</div>
+
 #### 6.4.3 线性代数运算
 
 如[表0-5](#tab0-5)所示，常用的线性代数运算符号。<span id="tab0-5"> </span>
+
 <div align="center">
 	<p>表0-5 线性代数运算符号</p>
 </div>
+
+<div align="center">
 
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
@@ -368,23 +376,29 @@ $$
 | $\|\mathbf{x}\|_2$ | `\|\mathbf{x}\|_2` | $L^2$ 范数 |
 | $\|\mathbf{x}\|_p$ | `\|\mathbf{x}\|_p` | $L^p$ 范数 |
 
+</div>
+
 #### 6.4.4 微积分
 
-如[表0-6](#tab0-6)所示，微积分相关的符号。<span id="tab 0-6"> </span>
+如[表0-6](#tab0-6)所示，微积分相关的符号。<span id="tab0-6"> </span>
 
 <div align="center">
 	<p>表0-6 微积分符号</p>
 </div>
 
+<div align="center">
+
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
 | $\frac{dy}{dx}$ | `\frac{dy}{dx}` | $y$ 对 $x$ 的导数 |
 | $\frac{\partial y}{\partial x}$ | `\frac{\partial y}{\partial x}` | $y$ 对 $x$ 的偏导数 |
-| $\nabla_{\mathbf{x}} y$ | `\nabla_{\mathbf{x}} y` | $y$ 对 $\mathbf{x}$ 的梯度 |
+| $\nabla_{\mathbf{x}} y$ | `\nabla_{\mathbf{x}} y$ | $y$ 对 $\mathbf{x}$ 的梯度 |
 | $\nabla^2_{\mathbf{x}} f(\mathbf{x})$ | `\nabla^2_{\mathbf{x}} f(\mathbf{x})` | $f$ 在 $\mathbf{x}$ 处的 `Hessian` 矩阵 |
 | $\int f(x)dx$ | `\int f(x)dx` | $f(x)$ 在 $x$ 上的定积分 |
-| $\sum_{i=1}^{n}$ | `\sum_{i=1}^{n}` | 求和 |
+| $\sum_{i=1}^{n}$ | `\sum_{i=1}^{n}$ | 求和 |
 | $\prod_{i=1}^{n}$ | `\prod_{i=1}^{n}` | 连乘 |
+
+</div>
 
 #### 6.4.5 概率和信息论
 
@@ -394,6 +408,8 @@ $$
 <div align="center">
 	<p>表0-7 概率和信息论符号</p>
 </div>
+
+<div align="center">
 
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
@@ -407,6 +423,8 @@ $$
 | $D_{\text{KL}}(P\|Q)$ | `D_{\text{KL}}(P\|Q)` | $P$ 和 $Q$ 的 `KL` 散度 |
 | $\mathcal{N}(x; \mu, \sigma^2)$ | `\mathcal{N}(x; \mu, \sigma^2)` | 均值为 $\mu$，方差为 $\sigma^2$ 的高斯分布 |
 
+</div>
+
 #### 6.4.6 常用函数
 
 如[表0-8](#tab0-8)所示，常用的数学函数。<span id="tab0-8"> </span>
@@ -414,6 +432,8 @@ $$
 <div align="center">
 	<p>表0-8 常用函数符号</p>
 </div>
+
+<div align="center">
 
 | 符号 | LaTeX 代码 | 说明 |
 | :--- | :--- | :--- |
@@ -424,6 +444,8 @@ $$
 | $\max(x, y)$ | `\max(x, y)` | 最大值函数 |
 | $\arg\max_x f(x)$ | `\arg\max_x f(x)` | 使 $f(x)$ 最大的 $x$ 值 |
 | $\arg\min_x f(x)$ | `\arg\min_x f(x)` | 使 $f(x)$ 最小的 $x$ 值 |
+
+</div>
 
 
 ### 6.5 矩阵和向量
