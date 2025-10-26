@@ -24,23 +24,25 @@
 
 ## 📚 结构预览
 
-| 章节                                                    | 摘要               | 状态 |
-| ------------------------------------------------------- | ------------------ | ---- |
-| [第1章 引言](./docs/Chapter01/Introduction.md)          | 项目概述和使用建议 | 🚧    |
-| [第2章 环境配置](./docs/Chapter02/Environment.md)       |                    | 🚧    |
-| [第3章 数据](./docs/Chapter03/Data.md)                  |                    | 🚧    |
-| [第4章 分词](./docs/Chapter04/Tokenization.md)          |                    | 🚧    |
-| [第5章 模型架构](./docs/Chapter05/Architecture.md)      |                    | 🚧    |
-| [第6章 预训练](./docs/Chapter06/Pretrain.md)            |                    | 🚧    |
-| [第7章 中期训练](./docs/Chapter07/Midtrain.md)          |                    | 🚧    |
-| [第8章 有监督微调](./docs/Chapter08/SFT.md)             |                    | 🚧    |
-| [第9章 强化学习](./docs/Chapter09/RL.md)                |                    | 🚧    |
-| [第10章 模型推理](./docs/Chapter10/Inference.md)        |                    | 🚧    |
-| [第11章 模型评估](./docs/Chapter11/Evaluation.md)       |                    | 🚧    |
-| [第12章 模型安全与红队测试](./docs/Chapter12/Safety.md) |                    | 🚧    |
-| [附录](./docs/Appendix/README.md)                       | 附录部分           | 🚧    |
+<div align="center">
 
+| 章节                                                    | 摘要                   | 状态 |
+| ------------------------------------------------------- | ---------------------- | ---- |
+| [第1章 引言](./docs/Chapter01/Introduction.md)          | 项目概述和使用建议     | 🚧    |
+| [第2章 环境配置](./docs/Chapter02/Environment.md)       | 项目的环境配置详细指南 | ✅    |
+| [第3章 数据](./docs/Chapter03/Data.md)                  |                        | 🚧    |
+| [第4章 分词](./docs/Chapter04/Tokenization.md)          |                        | 🚧    |
+| [第5章 模型架构](./docs/Chapter05/Architecture.md)      |                        | 🚧    |
+| [第6章 预训练](./docs/Chapter06/Pretrain.md)            |                        | 🚧    |
+| [第7章 中期训练](./docs/Chapter07/Midtrain.md)          |                        | 🚧    |
+| [第8章 有监督微调](./docs/Chapter08/SFT.md)             |                        | 🚧    |
+| [第9章 强化学习](./docs/Chapter09/RL.md)                |                        | 🚧    |
+| [第10章 模型推理](./docs/Chapter10/Inference.md)        |                        | 🚧    |
+| [第11章 模型评估](./docs/Chapter11/Evaluation.md)       |                        | 🚧    |
+| [第12章 模型安全与红队测试](./docs/Chapter12/Safety.md) |                        | 🚧    |
+| [附录](./docs/Appendix/README.md)                       | 项目附录部分           | 🚧    |
 
+</div>
 
 ## 🤝 项目成员
 
