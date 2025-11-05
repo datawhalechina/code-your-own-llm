@@ -114,31 +114,31 @@ sudo mount -t ceph $IP:$PORT:$PATH -o name=$NAME,secret=$SECRET== /mnt/$USER
 
 可以选择使用 `conda` 或 `venv` 来管理虚拟环境，新建虚拟环境的目的是让项目之间的环境相互隔离，不会因为依赖冲突而难以维护。
 
-- 使用 `conda` 新建虚拟环境并安装 `Python` 和 `uv`
+- 使用 `conda` 新建虚拟环境，使用 `pip` 进行管理
 
 ```bash
 conda create -n code python=3.10
-pip install uv
-# install the repo dependencies
-uv sync --extra gpu
+# For CUDA (Linux/Windows)
+pip install torch
+pip install nanochat
 ```
 
-- 使用 `venv` 新建虚拟环境
+- 使用 `venv` 新建虚拟环境，并使用 `uv` 进行管理
 
 ```bash
 # install uv
 command -v uv &> /dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
 # create a .venv local virtual environment (if it doesn't exist)
 [ -d ".venv" ] || uv venv
-# install the repo dependencies
-uv sync --extra gpu
+# install dependencies
+uv pip install nanochat --extra gpu
 ```
 
 验证环境
 
 ```bash
 python --version
-pip show uv
+pip show nanochat
 ```
 
 `torch` 可用性验证
