@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The $10 tier of nanochat
-# Designed to run end-to-end for $10/3 ~= 3.3 hours on a single GPU GPU
+# Designed to run end-to-end for $10/3 ~= 3.3 hours on a single RTX 3090/4090/5090 GPU
 # This is a budget-friendly version for experimentation and learning
 
 # all the setup stuff
@@ -27,7 +27,7 @@ source .venv/bin/activate
 # Make sure to first log in to wandb, e.g. run:
 #    `wandb login`
 # Then set the WANDB_RUN environment variable when running this script, e.g.:
-#    `WANDB_RUN=run10 bash run10.sh`
+#    `WANDB_RUN=Linux-Tier-1 bash Linux-Tier-1.sh`
 if [ -z "$WANDB_RUN" ]; then
     # Default run name for $10 tier
     WANDB_RUN=run10

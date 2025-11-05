@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# Showing an example run for exercising some of the code paths on the CPU (or MPS on Macbooks)
+# Showing an example run for exercising some of the code paths on the CPU
 # Run as:
-# bash dev/cpu_demo_run.sh
+# bash Linux-Tier-Free.sh
 
 # NOTE: Training LLMs requires GPU compute and $$$. You will not get far on your Macbook.
 # Think of this run as educational/fun demo, not something you should expect to work well.
-# This is also why I hide this script away in dev/
 
 # all the setup stuff
 export OMP_NUM_THREADS=1

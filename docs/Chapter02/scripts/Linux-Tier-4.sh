@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # The $1000 tier of nanochat
-# Designed to run end-to-end for $1000/24 ~= 41.6 hours on an 8XH100 node
-# A bit sparser on comments, see speedrun.sh for more detail
+# Designed to run end-to-end for $1000/24 ~= 41.6 hours on an 8XH100 or 8XH200 node
 
 # all the setup stuff
 export OMP_NUM_THREADS=1

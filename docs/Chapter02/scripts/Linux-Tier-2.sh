@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # This script is the "Best ChatGPT clone that $100 can buy",
-# It is designed to run in ~6 hours on 8XH100 node at $3/GPU/hour.
+# It is designed to run in ~6 hours on 8XA6000 node at $20/GPU/hour.
 
 # 1) Example launch (simplest):
-# bash Linux-Tier-3.sh
+# bash Linux-Tier-2.sh
 # 2) Example launch in a screen session (because the run takes ~6 hours):
-# screen -L -Logfile Linux-Tier-3.log -S Linux-Tier-3 bash Linux-Tier-3.sh
+# screen -L -Logfile Linux-Tier-2.log -S Linux-Tier-2 bash Linux-Tier-2.sh
 # 3) Example launch with wandb logging, but see below for setting up wandb first:
-# WANDB_RUN=Linux-Tier-3 screen -L -Logfile Linux-Tier-3.log -S Linux-Tier-3 bash Linux-Tier-3.sh
+# WANDB_RUN=Linux-Tier-2 screen -L -Logfile Linux-Tier-2.log -S Linux-Tier-2 bash Linux-Tier-2.sh
 
 # Default intermediate artifacts directory is in ~/.cache/nanochat
 export OMP_NUM_THREADS=1
@@ -33,7 +33,7 @@ source .venv/bin/activate
 # 1) Make sure to first log in to wandb, e.g. run:
 #    `wandb login`
 # 2) Set the WANDB_RUN environment variable when running this script, e.g.:
-#    `WANDB_RUN=Linux-Tier-3 bash Linux-Tier-3.sh`
+#    `WANDB_RUN=Linux-Tier-2 bash Linux-Tier-2.sh`
 if [ -z "$WANDB_RUN" ]; then
     # by default use "dummy" : it's handled as a special case, skips logging to wandb
     WANDB_RUN=dummy
@@ -82,17 +82,17 @@ if [ ! -d "$NANOCHAT_BASE_DIR/eval_bundle" ]; then
     mv eval_bundle $NANOCHAT_BASE_DIR
 fi
 
-# The d20 model is 561M parameters.
-# Chinchilla says #tokens = 20X #params, so we need 561e6 * 20 = 11.2B tokens.
-# Assume our tokenizer is 4.8 chars/token, this is 11.2B * 4.8 ~= 54B chars.
-# At 250M chars/shard, this is 54B / 250M ~= 216 shards needed for pretraining.
-# Round up to 240 for safety. At ~100MB/shard, this downloads ~24GB of data to disk.
+# The d16 model is 358M parameters.
+# Chinchilla says #tokens = 16X #params, so we need 358e6 * 16 = 5.728B tokens.
+# Assume our tokenizer is 4.8 chars/token, this is 5.728B * 4.8 ~= 27.49B chars.
+# At 250M chars/shard, this is 27.49B / 250M ~= 110 shards needed for pretraining.
+# Round up to 120 for safety. At ~100MB/shard, this downloads ~12GB of data to disk.
 # (The total number of shards available in the entire dataset is 1822.)
 echo "Waiting for dataset download to complete..."
 wait $DATASET_DOWNLOAD_PID
 
-# pretrain the d20 model
-torchrun --standalone --nproc_per_node=8 -m scripts.base_train -- --depth=20 --run=$WANDB_RUN
+# pretrain the d16 model on 8XA6000 node
+torchrun --standalone --nproc_per_node=8 -m scripts.base_train -- --depth=16 --run=$WANDB_RUN
 # evaluate the model on a larger chunk of train/val data and draw some samples
 torchrun --standalone --nproc_per_node=8 -m scripts.base_loss
 # evaluate the model on CORE tasks
