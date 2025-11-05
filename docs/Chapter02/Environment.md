@@ -4,11 +4,11 @@
 
 ## 1 硬件环境
 
-项目设计为上可在单个 `8×H100` 节点上运行完整的训练流程，下也支持在较小规模的硬件上进行实验。根据个人的预算需求和实际情况，可以选择不同的硬件配置，我们也为主流操作系统测试了多种 `TIER`, 方便学习者进行更加灵活的选择。
+项目设计为上可在单个 `8 × H100` 节点上运行完整的训练流程，下也支持在较小规模的硬件上进行实验。根据个人的预算需求和实际情况，可以选择不同的硬件配置，我们也为主流操作系统测试了多种 `TIER`, 方便学习者进行更加灵活的选择。
 
 ### 1.1 Linux
 
-我们推荐使用 `Linux` 作为首选的操作系统，因为在 `Linux` 中已经建立了非常成熟且良好的开发者生态，且深度学习的训练往往在 `Linux` 中有着最高的计算效率，无论是简单尝试，科研实验还是生产部署都有着不可替代的地位。
+我们推荐使用 `Linux` 作为项目开发和模型训练的首选操作系统，因为在 `Linux` 中已经建立了非常成熟且良好的开发者生态，且深度学习的训练往往在 `Linux` 中有着更好的优化和更高的计算效率，无论是 `demo` 尝试，进行科研实验还是实际生产部署都有着不可替代的地位。
 
 `Linux` 有着许多的发行版，接下来我们将以 `Ubuntu 24.04.2 LTS` 为例，并搭配 `NVIDIA` 的 `GPU` 来作为 `Linux` 下的示例环境。
 
@@ -41,7 +41,7 @@ rocm-smi
 | `Linux-Tier-Free` | `CPU`                    | $0$       | `d4`           | $0$               |
 | `Linux-Tier-1`    | `1 × RTX 3090/4090/5090` | $24/32GB$ | `d10`          | $2$               |
 | `Linux-Tier-2`    | `8 × A6000`              | $384GB$   | `d16`          | $20$              |
-| `Linux-Tier-3`    | `8 × A100/H100`          | $640GB$   | `d20`          | $60/128$         |
+| `Linux-Tier-3`    | `8 × A100/H100`          | $640GB$   | `d20/d32` | $60/160$        |
 | `Linux-Tier-4`    | `8 × H200`               | $1152GB$  | `d32`          | $300$        |
 
 </div>
@@ -60,14 +60,28 @@ rocm-smi
 
 | `Windows-Tier`      | 计算资源                 | 显存      | 适用模型参数量 | 卡时预算 |
 | ------------------- | ------------------------ | --------- | -------------- | -------- |
-| `Windows-Tier-Free` | `CPU`                    | $0$       | `d4`           | $0$      |
+| `Windows-Tier-Free` | `CPU (Intel or AMD)`     | $0$       | `d4`           | $0$      |
 | `Windows-Tier-1`    | `1 × RTX 3090/4090/5090` | $24/32GB$ | `d10`          | $0$      |
 
 </div>
 
 ### 1.3 macOS
 
-`macOS` 用户可以使用M系列芯片的 `MPS` 加速进行小规模实验，适用的规模和计算资源参考 `Windows-Tier-Free`。
+`macOS` 用户可以使用M系列芯片的 `MPS` 加速进行小规模实验，如[表2-3](#tab2-3)所示，适用的规模和计算资源均和 `Windows-Tier-Free` 类似。<span id="tab2-3"> </span>
+
+<div align="center">
+	<p>表2-3 macOS操作系统下的Tier划分</p>
+</div>
+
+
+<div align="center">
+
+
+| `macOS-Tier`      | 计算资源                  | 显存 | 适用模型参数量 | 卡时预算 |
+| ----------------- | ------------------------- | ---- | -------------- | -------- |
+| `macOS-Tier-Free` | `CPU (Intel or M-series)` | $0$  | `d4`           | $0$      |
+
+</div>
 
 
 
@@ -75,12 +89,12 @@ rocm-smi
 
 训练过程中需要存储预训练数据、模型检查点和中间结果，因此建议学习者至少准备以下存储空间：
 
-- <strong>预训练数据</strong>：`~20GB`（`FineWeb` 部分数据集）
+- <strong>预训练数据</strong>：`~20GB`（`FineWeb` 节选部分数据集）
 - <strong>模型检查点</strong>：`~10GB`（包含多个训练阶段的 `checkpoint`）
 - <strong>临时文件</strong>：`~5GB`（分词器训练、评估结果等）
 - <strong>总计</strong>：建议预留 `35GB` 的可用存储空间，默认的数据和模型的存储路径为 `~/.cache/nanochat/`
 
-如果SSD固态硬盘的大小不够，可以适当减少模型的参数量和数据的下载量；同时可以尝试挂载 `NFS`、`PFS`、`CephFS` 或 `S3` 作为网络文件存储，并注意修改默认存储路径到挂载路径下。
+如果 `SSD` 固态硬盘的大小不够，可以适当减少模型的参数量和数据的下载量；同时可以尝试挂载 `NFS`、`PFS`、`CephFS` 或 `S3` 作为网络文件存储，并注意修改默认存储路径到挂载路径下。
 
 以 `CephFS` 为例，挂载的命令如下：
 
@@ -133,14 +147,14 @@ pip show uv
 import torch
 
 # 检查 PyTorch 版本
-print(f"PyTorch 版本: {torch.__version__}")
+print(f"当前 PyTorch 版本: {torch.__version__}")
 
 # 检查 CUDA 是否可用
 print(f"CUDA 是否可用: {torch.cuda.is_available()}")
 
 # 检查 GPU 数量
 if torch.cuda.is_available():
-    print(f"GPU 数量: {torch.cuda.device_count()}")
+    print(f"可用 GPU 数量: {torch.cuda.device_count()}")
     print(f"当前 GPU: {torch.cuda.get_device_name(0)}")
 
 # 检查 MPS 是否可用（macOS）
