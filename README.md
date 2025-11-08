@@ -1,5 +1,5 @@
  <div align='center'>
-    <img src="assets/datawhale.png" alt="datawhale" width="500"/>
+    <img src="assets/logo.png" alt="logo" width="800"/>
   <h1>Code Your Own LLM</h1>
   <h3>动手训练你自己的大语言模型</h3>
   <p><em>这是一份全栈式的参考指南，用最简洁的代码帮助你端到端定义大语言模型的每一个细节</em></p>
@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg" alt="Python"/>
   <a href="https://datawhalechina.github.io/code-your-own-llm/"><img src="https://img.shields.io/badge/在线阅读-Online%20Reading-green?style=flat&logo=gitbook" alt="Online Reading"></a>
 </div>
+
 
 
 ---
